@@ -1,6 +1,6 @@
 import os
 import sys
-from repositories import MeasureRepository, IngredientRepository, MealRepository
+from services import MeasureService, IngredientService, MealService
 
 
 def parse_cli_args():
@@ -15,9 +15,9 @@ if __name__ == '__main__':
             "ingredients": ("milk", "cacao", "strawberry", "blueberry", "blackberry", "sugar"),
             "measures": ("ml", "g", "l", "cup", "tbsp", "tsp", "dsp", "")}
 
-    MeasureRepository().create(data['measures'])
-    IngredientRepository().create(data['ingredients'])
-    MealRepository().create(data['meals'])
+    MeasureService().create(data['measures'])
+    IngredientService().create(data['ingredients'])
+    MealService().create(data['meals'])
 
 
 
