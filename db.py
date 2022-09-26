@@ -7,7 +7,7 @@ import os
 class DbInstance:
     _instance = None
 
-    def __new__(cls, db_name='food_blog.db', db_log=False):
+    def __new__(cls):
         if cls._instance is None:
             cls._instance = super(DbInstance, cls).__new__(cls)
 

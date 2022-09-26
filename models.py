@@ -35,3 +35,16 @@ class Meal(Base):
     def __init__(self, name):
         super().__init__()
         self.name = name
+
+
+class Recipe(Base):
+    __tablename__ = 'recipes'
+
+    recipe_id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String, nullable=False)
+    description = Column(String)
+
+    def __init__(self, name, description):
+        super().__init__()
+        self.name = name
+        self.description = description
