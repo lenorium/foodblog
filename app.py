@@ -1,7 +1,7 @@
 import os
 import sys
 
-from services import RecipeService
+import services
 
 
 def parse_cli_args():
@@ -16,7 +16,7 @@ def add_recipes():
         if not name:
             break
         description = input('Recipe description:').strip()
-        RecipeService.create(name, description)
+        services.create_recipe(name, description)
 
 
 if __name__ == '__main__':
@@ -26,9 +26,9 @@ if __name__ == '__main__':
     #         "ingredients": ("milk", "cacao", "strawberry", "blueberry", "blackberry", "sugar"),
     #         "measures": ("ml", "g", "l", "cup", "tbsp", "tsp", "dsp", "")}
     #
-    # MeasureService.create(data['measures'])
-    # IngredientService.create(data['ingredients'])
-    # MealService.create(data['meals'])
+    # services.create_measures(data['measures'])
+    # services.create_ingredients(data['ingredients'])
+    # services.create_meals(data['meals'])
 
     add_recipes()
 
