@@ -20,3 +20,8 @@ def save(entity):
             session.add(entity)
     except Exception as e:
         print(e)
+
+
+def get_all(cls) -> list:
+    with session_maker()() as session:
+        return session.query(cls).all()

@@ -12,11 +12,14 @@ def create_ingredients(ingredient_names: tuple):
     repository.save_bulk(ingredients)
 
 
-def create_recipe(name, description):
-    repository.save(Recipe(name, description))
+def create_recipe(name, description, meals):
+    repository.save(Recipe(name, description, meals))
 
 
 def create_meals(meal_names: tuple):
     meals = [Meal(name) for name in meal_names]
     repository.save_bulk(meals)
 
+
+def get_meals():
+    return repository.get_all(Meal)

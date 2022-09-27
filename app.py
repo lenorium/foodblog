@@ -16,7 +16,13 @@ def add_recipes():
         if not name:
             break
         description = input('Recipe description:').strip()
-        services.create_recipe(name, description)
+
+        meals = services.get_meals()
+        print(' '.join([f'{i + 1}) {m.name}' for i, m in enumerate(meals)]))
+        selected_meals_indices = input('When the dish can be served: ').strip().split()
+        selected_meals = [meals[int(i) - 1] for i in selected_meals_indices]
+
+        services.create_recipe(name, description, selected_meals)
 
 
 if __name__ == '__main__':
