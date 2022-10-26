@@ -24,7 +24,7 @@ def add_recipes():
 
 def select_meals():
     meals = meal_utils.all()
-    print(' '.join([f'{i + 1}) {m.name}' for i, m in enumerate(meals)]))
+    print(*[f'{i}. {v}' for i,v in enumerate(meals, start=1)])
     selected_meals_indices = input('When the dish can be served: ').strip().split()
     return [meals[int(i) - 1] for i in selected_meals_indices]
 
